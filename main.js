@@ -75,17 +75,16 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 800,
     height: 900,
+    icon: path.join(__dirname, "public/assets/icons/win/pharma.ico"),
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
-      enalbleRemoteModule: false,
+      enableRemoteModule: false,
       nodeIntegration: false,
       contextIsolation: true,
     },
   });
 
-  win.loadURL("http://localhost:3000"); // Point to React dev server
-
-  //   win.loadFile("./build/index.html");
+  win.loadFile(path.join(__dirname, "build", "index.html"));
 }
 
 // Handling dataBase // ipcMain

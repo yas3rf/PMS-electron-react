@@ -17,6 +17,7 @@ const Sidebar = () => {
         className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
       >
         <i className="bi bi-capsule-pill"></i>
+
         <span className="fs-4 ">YasPharma</span>
       </Link>
       <hr />

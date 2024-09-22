@@ -2,6 +2,7 @@
   "name": "pharmacy",
   "version": "0.1.0",
   "main": "main.js",
+  "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -10,6 +11,7 @@
     "better-sqlite3": "^11.3.0",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "electron-packager": "^17.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2",
@@ -21,8 +23,34 @@
     "start": "react-scripts start",
     "electron": "electron .",
     "build": "react-scripts build",
+    "dist": "electron-builder",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "build": {
+    "appId": "com.yaser.pharmacy",
+    "productName": "PharmacyApp",
+    "files": [
+      "build/**/*",
+      "main.js",
+      "preload.js",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +72,7 @@
   },
   "devDependencies": {
     "electron": "^32.0.2",
+    "electron-builder": "^24.6.0",
     "electron-rebuild": "^3.2.9"
   }
 }
